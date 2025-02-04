@@ -1,0 +1,241 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+locale: en-US
+date_format: "%Y-%m-%d"
+title: Low-Cost Developer
+subtitle: Build Smarter, Spend Lesser!
+title_separator: "-"
+email: gianghoang.dev@gmail.com
+name: &name "Low-Cost Developer"
+description: &description >- # this means to ignore newlines until "baseurl:"
+  Low-Cost Developer helps startups, freelancers, and developers build apps and websites with minimal cost or free. Discover free tools, budget-friendly hosting, and smart development strategies.
+url: https://giangbimin.github.io # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: # the subpath of your site, e.g. /blog
+logo: /assets/images/logo-square.svg
+og_image: /assets/images/logo.svg
+github_username: giangbimin
+author:
+  name   : "Low-Cost Developer"
+  avatar : "assets/images/lowcostdeveloper.webp"
+  bio    : "10 years of experience turning ideas into real projects using free tools and cost-effective solutions. Passionate about helping startups and students, this platform shares insights on budget-friendly development, hosting, and smart tech strategies."
+  location: "VN"
+  links:
+    - label: "LinkendIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/im-giang-hoang"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/giangbimin"
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/giangbimin"
+    - label: "LinkendIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/im-giang-hoang"
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Bangkok
+# Pagination with jekyll-paginate
+paginate: 10 # amount of posts to show
+paginate_path: /page:num/
+pagination:
+  enabled: true
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/'  # Pages are index.html inside this folder (default)
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+# Routes
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+defaults:
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+      breadcrumbs: true
+      show_date: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
+search: true
+enable_copy_code_button: true
+google_site_verification:
+comments:
+  provider               : "false" # false (default), "disqus", "discourse", "facebook", "staticman_v2", "staticman", "utterances", "giscus", "custom"
+  disqus:
+    shortname            :
+  discourse:
+    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook:
+    # https://developers.facebook.com/docs/plugins/comments
+    appid                :
+    num_posts            : # 5 (default)
+    colorscheme          : # "light" (default), "dark"
+  utterances:
+    theme                : # "github-light" (default), "github-dark"
+    issue_term           : # "pathname" (default)
+  giscus:
+    repo_id              : # Shown during giscus setup at https://giscus.app
+    category_name        : # Full text name of the category
+    category_id          : # Shown during giscus setup at https://giscus.app
+    discussion_term      : # "pathname" (default), "url", "title", "og:title"
+    reactions_enabled    : # '1' for enabled (default), '0' for disabled
+    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+reCaptcha:
+  siteKey                : # ""
+  secret                 : # ""
+atom_feed:
+  path                   : # blank (default) uses feed.xml
+
+# Analytics
+# analytics:
+#   provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
+#   google:
+#     tracking_id          : "" # Replace this with your ID, or delete
+#     anonymize_ip         : true
+
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Build settings
+remote_theme: "mmistakes/minimal-mistakes@4.26.2"
+minimal_mistakes_skin: dark
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jemoji
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+keep_files:
+  - .git
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+compress_html:
+  clippings: all
+  ignore:
+    envs: development

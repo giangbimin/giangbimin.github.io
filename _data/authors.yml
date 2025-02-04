@@ -1,0 +1,12 @@
+LD:
+  name   : "Low-Cost Developer"
+  avatar : "assets/images/lowcostdeveloper.webp"
+  bio    : "10 years of experience turning ideas into real projects using free tools and cost-effective solutions. Passionate about helping startups and students, this platform shares insights on budget-friendly development, hosting, and smart tech strategies."
+  location: "VN"
+  links:
+    - label: "LinkendIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/im-giang-hoang"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/giangbimin"
